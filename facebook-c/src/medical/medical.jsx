@@ -37,11 +37,11 @@ const MedicalPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans">
+    <div className="min-h-screen text-white font-sans">
       {/* App Bar */}
-      <header className="bg-gray-800 p-4 shadow-md sticky top-0 z-10">
+      <header className="p-4 shadow-md sticky top-0 z-10">
         <div className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold mb-4 text-center">Medical Services</h1>
+          <h1 className="text-4xl font-bold mb-4 text-center">Medical Services</h1>
           
           {/* Search Bar */}
           <div className="relative w-full max-w-xl mb-4">

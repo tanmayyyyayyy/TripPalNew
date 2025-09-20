@@ -6,23 +6,23 @@ const ExplorePage = () => {
   const [activeTab, setActiveTab] = useState('Restaurants');
 
   const categoryItems = {
-    'Restaurants': Array.from({ length: 6 }, (_, index) => ({
+    'Restaurants': Array.from({ length: 8 }, (_, index) => ({
       title: `Restaurant ${index + 1}`,
       image: `https://placehold.co/400x300/4F46E5/ffffff?text=Restaurant+${index + 1}`,
     })),
-    'Cafes': Array.from({ length: 6 }, (_, index) => ({
+    'Cafes': Array.from({ length: 8 }, (_, index) => ({
       title: `Cafe ${index + 1}`,
       image: `https://placehold.co/400x300/F59E0B/ffffff?text=Cafe+${index + 1}`,
     })),
-    'Tourist Sites': Array.from({ length: 6 }, (_, index) => ({
+    'Tourist Sites': Array.from({ length: 8 }, (_, index) => ({
       title: `Tourist Site ${index + 1}`,
       image: `https://placehold.co/400x300/10B981/ffffff?text=Site+${index + 1}`,
     })),
-    'Hotel Booking': Array.from({ length: 6 }, (_, index) => ({
+    'Hotel Booking': Array.from({ length: 8 }, (_, index) => ({
       title: `Hotel Booking ${index + 1}`,
       image: `https://placehold.co/400x300/10B971/ffffff?text=Site+${index + 1}`,
     })),
-    'Cab Booking': Array.from({ length: 4 }, (_, index) => ({
+    'Cab Booking': Array.from({ length: 5 }, (_, index) => ({
       title: `Cab Booking ${index + 1}`,
       image: `https://placehold.co/400x300/12B981/ffffff?text=Site+${index + 1}`,
     })),
@@ -37,11 +37,11 @@ const ExplorePage = () => {
   ) || [];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans">
+    <div className="min-h-screen text-white font-sans">
       {/* App Bar */}
-      <header className="bg-gray-800 p-4 shadow-md sticky top-0 z-10">
+      <header className=" p-4 shadow-md top-0 z-10">
         <div className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold mb-4 text-center">Explore</h1>
+          <h1 className="text-6xl font-sans mb-4 text-center">Explore</h1>
           
           {/* Search Bar */}
           <div className="relative w-full max-w-xl mb-4">
@@ -58,7 +58,7 @@ const ExplorePage = () => {
           </div>
 
           {/* Tab Bar */}
-          <div className="flex justify-center w-full bg-gray-800 py-2 overflow-x-auto">
+          <div className="flex justify-center w-full py-2 overflow-x-auto">
             {Object.keys(categoryItems).map((category) => (
               <button
                 key={category}
@@ -81,8 +81,8 @@ const ExplorePage = () => {
       </header>
 
       {/* Content */}
-      <main className="p-4 pt-4">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+      <main className="p-9 pt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {filteredItems.map((item, index) => (
             <div key={index} className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-all hover:scale-103">
               <button onClick={() => handleItemClick(item.title)} className="w-full text-left focus:outline-none">
