@@ -5,7 +5,8 @@ import MedicalPage from './medical/medical';
 // import profileSection from './profile';
 // import sellerInfo from './sellerinfo';
 import LoginPage from './login';
-import Threejs from './threejs';
+import ThreeAnimation from './animation';
+ 
 
 
 const TravelWebsite = () => {
@@ -21,6 +22,7 @@ const TravelWebsite = () => {
     const [activePage, setActivePage] = useState("home"); // 'main', 'explore', 'medical'
 
     const verifiedVendors = [
+        
         {
             id: 1,
             name: 'Rajesh Guide Services',
@@ -126,37 +128,40 @@ const TravelWebsite = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white font-sans antialiased">
+        <div className="min-h-screen text-white font-sans antialiased">
              
+              <ThreeAnimation/>
 
-            <header className="bg-gray-900 shadow-sm border-b border-gray-800 sticky top-0 z-50">
+            <header className=" top-0 z-50">
+
+                {/* bg-[#102C57]  shadow-sm border-b border-[#102C57]*/}
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                     <div className="flex justify-between items-center h-16">
 
                         <div className="flex items-center">
-                            <CompassIcon className="h-8 w-8 text-blue-400" />
-                            <span className="ml-2 text-2xl font-bold text-white">TripPal</span>
+                            <CompassIcon className="h-14 w-14 text-blue-400" />
+                            <span className="ml-2  text-4xl font-bold text-[#EADBC8]">TripPal</span>
                         </div>
 
                         {/* Desktop Navbar */}
                         <nav className="hidden md:flex items-center space-x-8">
 
                             <button onClick={() => setActivePage('home')}
-                                className={`text-gray-300 hover:text-white transition-colors px-2 py-1 rounded 
-                                    ${activePage === 'home' ? 'border-b-2 border-blue-500 text-white' : ''}`}>Home</button>
+                                className={`text-white hover:text-gray-300 transition-colors px-2 py-1 rounded 
+                                    ${activePage === 'home' ? 'border-b-2 border-[#1b9986] text-[#EADBC8]' : ''}`}>Home</button>
 
                             <button onClick={() => setActivePage('explore')}
-                                className={`text-gray-300 hover:text-white transition-colors px-2 py-1 rounded 
-                                    ${activePage === 'explore' ? 'border-b-2 border-blue-500 text-white' : ''}`}>Explore</button>
+                                className={`text-white hover:text-gray-300 transition-colors px-2 py-1 rounded 
+                                    ${activePage === 'explore' ? 'border-b-2 border-[#1b9986] text-[#EADBC8]' : ''}`}>Explore</button>
 
                             <button onClick={() => setActivePage('medical')}
-                                className={`text-gray-300 hover:text-white transition-colors px-2 py-1 rounded 
-                                    ${activePage === 'medical' ? 'border-b-2 border-blue-500 text-white' : ''}`}>Medical Services</button>
+                                className={`text-white hover:text-gray-300 transition-colors px-2 py-1 rounded 
+                                    ${activePage === 'medical' ? 'border-b-2 border-[#1b9986] text-[#EADBC8]' : ''}`}>Medical Services</button>
 
                             <button onClick={() => setIsLoginOpen(true)}
-                                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Login</button>
+                                className=" border-1 border-[#1b9986] bg-gradient-to-br from-[#11676a] via-gray-900 to-[#1b9986] transition-colors duration-100 text-[#EADBC8] px-4 py-2 rounded-md">Login</button>
 {/* 
                             <button onClick={() => setIsSellerInfoOpen(true)}
                                 className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors">Seller Info</button> */}
@@ -179,7 +184,7 @@ const TravelWebsite = () => {
                 </div>
 
                         {isMenuOpen && (
-                            <div className="md:hidden bg-gray-900 absolute w-full left-0 py-4 shadow-lg animate-fade-in-down">
+                            <div className="md:hidden z-1 bg-gray-900 absolute w-full left-0 py-4 shadow-lg animate-fade-in-down">
 
                                 <div className="flex flex-col items-center space-y-4">
 
@@ -212,26 +217,26 @@ const TravelWebsite = () => {
 
                     <section className="text-center mb-16">
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-down">Explore Tourist Places, Safely</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#EADBC8] mb-4 animate-fade-in-down">Explore Tourist Places, Safely</h1>
                         
-                        <p className="text-lg md:text-xl text-gray-300 animate-fade-in-up">Your trusted guide to authentic experiences, fair prices, and instant help.</p>
+                        <p className="text-lg md:text-xl text-[#EADBC8] animate-fade-in-up">Your trusted guide to authentic experiences, fair prices, and instant help.</p>
                     
                     </section>
 
                     <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
 
-                        <button onClick={() => setIsPriceListModalOpen(true)} className="bg-gray-800 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <button onClick={() => setIsPriceListModalOpen(true)} className="bg-gradient-to-br from-white via-[#1b9986] to-white transition-colors rounded-xl shadow-lg p-6 text-center transform duration-1000 hover:scale-105 hover:shadow-2xl">
                             <DollarSignIcon className="h-12 w-12 text-green-400 mx-auto mb-4" />
 
                             <h3 className="text-xl font-semibold text-white">Check Fair Prices</h3>
 
                             <p className="text-gray-400 mt-2">View transparent rates for local services.</p></button>
 
-                        <button className="bg-gray-800 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"><HelpCircleIcon className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                        <button className="bg-[#EADBC8] rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"><HelpCircleIcon className="h-12 w-12 text-blue-400 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold text-white">Need Help?</h3>
                             <p className="text-gray-400 mt-2">Get quick access to tourist helpline.</p></button>
 
-                        <button className="bg-gray-800 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"><StarIcon className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
+                        <button className="bg-[#EADBC8] rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"><StarIcon className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold text-white">Community Ratings</h3>
                             <p className="text-gray-400 mt-2">See what other travelers say.</p></button>
 
@@ -275,7 +280,7 @@ const TravelWebsite = () => {
                     />
 
                    {/* <SellerSignUpModal
-                        isOpen={isSignUpModalOpen}
+                        isOpen={isSignUpModalOpen}kfhrijgo45jogp5
                         onClose={() => setIsSignUpModalOpen(false)}
                         onRegister={handleRegistration}
                     /> */}

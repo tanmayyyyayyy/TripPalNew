@@ -100,7 +100,7 @@ const loginPage = ({ isOpen, onClose }) => {
           Don't have an account? <a href="#" className="text-blue-400 hover:underline">
 
             <button onClick={() => setIsSellerSignUpOpen (true)}
-                className="text-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Sign in</button>
+                className="text-blue-600 px-1 py-2 rounded-md">Sign in</button>
           
           </a>
           
